@@ -5,15 +5,15 @@ import Goat from '../Goat/Goat';
 
 class GoatCoral extends React.Component {
   render() {
-    const { goats } = this.props;
+    const { goats, useAGoat } = this.props;
     console.error('goats?', goats);
     const makeGoats = goats.map((goat) => (
-      <Goat goat={goat}/>
+      <Goat key={goat.id} goat={goat} useAGoat={useAGoat}/>
     ));
 
     return (
     <div className="GoatCoral d-flex flex-wrap">
-      {makeGoats}
+      { makeGoats }
     </div>
     );
   }
